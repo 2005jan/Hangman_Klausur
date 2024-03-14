@@ -20,7 +20,6 @@ word=random.choice(word)    # chooses random word out of list
 print(word)
 guessed_letters=[]   
 lives=6             #temp
-complete=False      #temp
 
 #############################
 #       functions           #
@@ -30,7 +29,7 @@ for letters in word:    #prints "_" for every letter in word
     print("",end="_")
 
 def user_input():
-    while lives>0 and complete==False:
+    while lives>0:
         guess=input("\nGeben Sie einen Buchstaben ein: ")   #user inputs a letter
         guess=guess.upper()     #capitalizes user input
         if guess in guessed_letters:    #checks if this letter was already guessed before
@@ -40,11 +39,14 @@ def user_input():
         for letter in word:
             if guess==letter:
                 print("TRUE")
-            elif guess=="quit":
-                complete==True
             else:    
+                lives -=1
                 print("",end="")
         print(f"Letters guessed till now:{guessed_letters}")
+        if all(letter in guessed_letters for letter in set(word)):
+            print("Won")
+            return
+            
 
 
 #############################
