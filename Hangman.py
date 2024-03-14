@@ -16,9 +16,9 @@ import random
 #############################
 
 from word import word  #variable word is assigned with words from word.py
-word=random.choice(word)
+word=random.choice(word)    # chooses random word out of list
 print(word)
-
+guessed_letters=[]   
 lives=6             #temp
 complete=False      #temp
 
@@ -26,9 +26,13 @@ complete=False      #temp
 #       functions           #
 #############################
 
+for letters in word:
+    print("",end="_")
+
 def user_input():
     while lives>0 and complete==False:
-        guess=input("Geben Sie einen Buchstaben ein: ")
+        guess=input("\nGeben Sie einen Buchstaben ein: ")
+        guessed_letters.append(guess)
         for letter in word:
             if guess==letter:
                 print("TRUE")
@@ -36,6 +40,7 @@ def user_input():
                 complete==True
             else:    
                 print("",end="")
+        print(f"Letters guessed till now:{guessed_letters}")
 
 
 #############################
