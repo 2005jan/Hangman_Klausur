@@ -26,13 +26,17 @@ complete=False      #temp
 #       functions           #
 #############################
 
-for letters in word:
+for letters in word:    #prints "_" for every letter in word
     print("",end="_")
 
 def user_input():
     while lives>0 and complete==False:
-        guess=input("\nGeben Sie einen Buchstaben ein: ")
-        guessed_letters.append(guess)
+        guess=input("\nGeben Sie einen Buchstaben ein: ")   #user inputs a letter
+        guess=guess.upper()     #capitalizes user input
+        if guess in guessed_letters:    #checks if this letter was already guessed before
+            print("Double input")
+        else:
+            guessed_letters.append(guess)
         for letter in word:
             if guess==letter:
                 print("TRUE")
