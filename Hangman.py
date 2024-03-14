@@ -25,8 +25,6 @@ def init():
     random_word=random.choice(word)    # chooses random word out of list
     print(random_word)
     return random_word
-guessed_letters=[]   
-lives=6
 
 def print_word():
     for i in word:
@@ -74,6 +72,8 @@ def user_input():
 #       main                #
 #############################
 while next_round==True:
+    lives=6
+    guessed_letters=[]
     word=init()
     print_word()
     user_input()
