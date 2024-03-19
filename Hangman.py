@@ -23,7 +23,6 @@ next_round=True
 def init():
     from word import word       #variable word is assigned with words from word.py
     random_word=random.choice(word)    # chooses random word out of list
-    print(random_word)
     return random_word
 
 def print_word():
@@ -40,12 +39,13 @@ def user_guess(guess):
             lives -=1
             score-=1
     else: 
-        score+=1
+        count=word.count(guess)
+        score+=count
     print_word()
     print(f"Sie haben bisher die Buchstaben {guessed_letters} versucht.")
     print(f"Punktzahl: {score}")
     if all(letter in guessed_letters for letter in set(word)):
-        print("Glückwunsch! Sie haben das Wort erraten.")
+        print(f"\nGlückwunsch! Sie haben das Wort {word} erraten.\nSie haben {score} Punkte.\n")
         return 
     elif lives==0:
         print(f"Sie haben keine Leben mehr! Das Wort war {word}.")
