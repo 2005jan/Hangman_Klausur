@@ -1,7 +1,8 @@
 #############################
 #       author: Jan         #
 #       date: 07.03.2024    #
-# brief: Hangman in German  #
+#  brief: Hangman in German #
+#       endless runner      #
 #############################
 
 #############################
@@ -24,7 +25,7 @@ next_round=True
 #chooses a random word from word.py and returns it as word into main
 def init():
     from word import word               #variable word is assigned with words from word.py
-    random_word=random.choice(word)     # chooses random word out of list
+    random_word=random.choice(word)     # chooses random word out of list 'word' 
     return random_word
 
 #prints the already guessed letters of the random word
@@ -77,12 +78,12 @@ def user_guess(guess):
     print(f"Punktzahl: {score}")
     #checks if game has been won or lost 
     if all(letter in guessed_letters for letter in set(word)):
-        score+=5
+        score+=5                    #bonus for guessing the word
         print(f"\nGlückwunsch! Sie haben das Wort {word} erraten.\nSie haben {score} Punkte.\n")
         return 
     elif lifes==0:
         print(f"Sie haben keine Leben mehr! Das Wort war {word}.")
-        next_round=False
+        next_round=False            #stops 'while' loop in main
 
 #############################
 #       main                #
