@@ -1,5 +1,10 @@
 #############################
+#                           #
+#          HANGMAN          #
+#                           #
+#############################
 #       author: Jan         #
+#  student number:1351461   #
 #       date: 07.03.2024    #
 #  brief: Hangman in German #
 #       endless runner      #
@@ -21,6 +26,13 @@ next_round=True
 #############################
 #       functions           #
 #############################
+
+#prints instructions
+def start():
+    print("\nSie spielen Galgenmännchen. \nDas Ziel ist es, eine höchstmgliche Anzahl an Punkten zu erreichen.")
+    print("Gesucht werden deutsche Nomen. Bitte beachten Sie, dass Umlaute ersetzt worden sind: ä -> ae, ö -> oe, ü -> ue, und ß -> ss.")
+    print("Um das Spiel später zu verlassen, geben Sie bitte 'quit' ein.")
+    temp=input("Bitte geben Sie eine beliebige Eingabe ein, um fortzufahren.")
 
 #chooses a random word from word.py and returns it as word into main
 def init():
@@ -79,7 +91,8 @@ def user_guess(guess):
     #checks if game has been won or lost 
     if all(letter in guessed_letters for letter in set(word)):
         score+=5                    #bonus for guessing the word
-        print(f"\nGlückwunsch! Sie haben das Wort {word} erraten.\nSie haben {score} Punkte.\n")
+        print(f"\nGlückwunsch! Sie haben das Wort {word} erraten.\nSie haben {score} Punkte.")
+        print("Um das Spiel zu verlassen, geben Sie bitte 'quit' ein.\n")
         return 
     elif lifes==0:
         print(f"Sie haben keine Leben mehr! Das Wort war {word}.")
@@ -88,7 +101,7 @@ def user_guess(guess):
 #############################
 #       main                #
 #############################
-            
+start()                                 
 while next_round==True:     #program ends if a round was lost or the quit was entered
     lifes=6                 #lifes is declared in the first run and reset in the next runs
     guessed_letters=[]      #guessed_letters is declared in the first run and reset in the next runs
