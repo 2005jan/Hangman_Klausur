@@ -1,4 +1,4 @@
 Hangman_Klausur
 Erstellt von Jan Hafen, dualer Student an der DHBW Ravensburg Campus Friedrichshafen. Matrikelnummer 1351461.
 Wird das Programm "Hangman" gestartet, so kann in der Konsole Galgenmännchen gespielt werden. Es wird zufällig ein Wort aus der Datei word.py ausgewählt. Das Ziel ist es durch die Eingabe von einzelnen Buchstaben, das Wort zu erraten. Die Liste stammt von der Internetseite https://deutsch-werden.de/de/deutsche-woerternomen-man-kennen-sollte-b1-liste und wurde so verändert, dass alle Wörter erraten werden können.
-In der Konsole wird Schritt für Schritt erklärt, was eingegeben werden muss um das Spiel spielen zu können. 
+In der Konsole wird Schritt für Schritt erklärt, was eingegeben werden muss, um das Spiel spielen zu können. 
